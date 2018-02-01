@@ -18,7 +18,7 @@ public class YourPlayer implements BrainySnakePlayer {
 
     @Override
     public String getPlayerName() {
-        return "YourName";
+        return "xXKillah420BlaZeITXx";
     }
 
     @Override
@@ -88,7 +88,7 @@ public class YourPlayer implements BrainySnakePlayer {
                     }
                     break;
             }
-        } else if (this.playerState.getMovesRermaining() % 50 == 0) {
+        } else if (this.playerState.getMovesRemaining() % 35 == 0 && !barrierAhead() && !barrierToTheRight()) {
             nextMove = turnRight(current);
         } else if (this.closestPoint == snakeHead) {
             this.closestPoint = null;
@@ -149,8 +149,12 @@ public class YourPlayer implements BrainySnakePlayer {
     }
 
     private boolean barrierToTheRight() {
-        for >()
-        if (this.playerView.getVisibleFields())
+        // Check if the visible field to the right of the snake's head is a barrier
+        if (this.playerView.getVisibleFields().get(23).getFieldType() == FieldType.LEVEL) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
